@@ -114,7 +114,7 @@ export default function AdminSignup() {
         <p className="text-sm text-center mt-4">
           Already have an admin?{" "}
           <Link
-            to="/admin/login"
+            to="/login"
             className="text-blue-600 font-medium"
           >
             Login

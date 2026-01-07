@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <header className="sticky top-0 z-50 flex items-center justify-center w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
       <div className="flex items-center justify-between px-4 sm:px-10 py-3 w-full max-w-6xl">
@@ -52,7 +56,7 @@ export default function Navbar() {
             </a>
           </nav>
 
-          <button className="flex items-center justify-center h-10 px-4 rounded-lg bg-primary text-white text-sm font-bold hover:opacity-90 transition-opacity" type="button" onClick={() => ("/login")}>
+          <button className="flex items-center justify-center h-10 px-4 rounded-lg bg-primary text-white text-sm font-bold hover:opacity-90 transition-opacity" type="button" onClick={() => navigate("/login")}>
             <span className="truncate">Login</span>
           </button>
         </div>

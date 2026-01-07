@@ -1,6 +1,10 @@
+// import { set } from "mongoose";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     firstname: '',
     lastname: '',
@@ -14,12 +18,17 @@ export default function Signup() {
     confirmPassword: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("")
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setLoading(true);
 
     if (form.password !== form.confirmPassword) {
       alert('Passwords do not match');
@@ -27,6 +36,8 @@ export default function Signup() {
     }
 
     try {
+
+
       const res = await fetch("http://localhost:3000/auth/signup", {
         method: "POST",
         headers: {

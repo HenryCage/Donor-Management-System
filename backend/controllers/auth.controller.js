@@ -68,7 +68,7 @@ export const login = async (req, res) => {
       return res.status(400).json({message: 'Invalid login details'})
     }
     
-    console.log("LOGIN RESPONSE USER:", User);
+    console.log("LOGIN RESPONSE USER:", user);
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.cookie('access-token', token, {
@@ -80,15 +80,17 @@ export const login = async (req, res) => {
     
     const { firstname, lastname, email: userEmail, _id } = user
 
-    return res.status(200).json({
-      message: 'Login Successful',
-      _id,
-      firstname,
-      lastname,
-      email: userEmail,
-      token
+    res.status(200).json({
+      message: "Login successful",
+      token,
+      user: {
+        id: user._id,
+        email: user.email,
+        role: user.role
+      }
     })
   } catch (error) {
-    
+    console.log("Error in Login controller");
+    res.status(500).json({message: error.message})
   }
 }
