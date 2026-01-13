@@ -1,21 +1,28 @@
-import jwt from 'jsonwebtoken'
-import Auth from '../models/auth.model.js'
+import jwt from "jsonwebtoken";
+import Auth from "../models/auth.model.js";
 
 export const verifyToken = async (req, res, next) => {
   try {
-    console.log("AUTH HEADER:", req.headers.authorization);
+    const authHeader = req.headers.authorization;
 
-    const token = req.headers.authorization?.split(" ")[1];
-  
-    if (!token) {
-      return res.status(401).json({message: 'Not Authorized'});
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      return res.status(401).json({ message: "Not Authorized" });
     }
-  
+
+    const token = authHeader.split(" ")[1];
+
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await Auth.findById(decoded.id).select('-password');
-  
+
+    const authUser = await Auth.findById(decoded.id).select("-password");
+
+    if (!authUser) {
+      return res.status(401).json({ message: "User not found" });
+    }
+
+    req.user = authUser; 
     next();
   } catch (error) {
-    return res.status(401).json({ message: 'Not Authorized' });
+    console.error("Error in verifyToken:", error.message);
+    return res.status(401).json({ message: "Not Authorized" });
   }
 };

@@ -27,6 +27,7 @@ export const createStaff = async (req, res) => {
       lastname,
       dob,
       gender,
+      email,
       department,
       phone,
     })
@@ -68,17 +69,22 @@ export const login = async (req, res) => {
       return res.status(400).json({message: 'Invalid login details'})
     }
     
-    console.log("LOGIN RESPONSE USER:", user);
+    // console.log("LOGIN RESPONSE USER:", user);
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-    res.cookie('access-token', token, {
-      httpOnly: true,
-      sameSite: 'none',
-      secure: 'true',
-      path: '/'
-    })
+    const token = jwt.sign({ 
+      id: user._id, 
+      role: user.role 
+    }, process.env.JWT_SECRET, 
+      { expiresIn: '1d' }
+    );
+    // res.cookie('access-token', token, {
+    //   httpOnly: true,
+    //   sameSite: 'none',
+    //   secure: 'true',
+    //   path: '/'
+    // })
     
-    const { firstname, lastname, email: userEmail, _id } = user
+    // const { firstname, lastname, email: userEmail, _id } = user
 
     res.status(200).json({
       message: "Login successful",

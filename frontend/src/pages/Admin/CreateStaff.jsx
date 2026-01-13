@@ -106,12 +106,11 @@ export default function Signup() {
               className="input"
           />
 
-          <input
-              name='gender'
-              placeholder="Gender"
-              onChange={handleChange}
-              className="input"
-          />
+          <select name="gender" onChange={handleChange} className="input">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
 
           <input
               name='phone'
@@ -162,7 +161,7 @@ export default function Signup() {
               className="input"
           />
 
-          <button onClick={() => navigate('/admin/staffs')}className="bg-primary text-white h-12 rounded-lg font-bold mt-2 hover:bg-blue-600 transition" >
+          <button onClick={() => navigate('/admin/dashboard')}className="bg-primary text-white h-12 rounded-lg font-bold mt-2 hover:bg-blue-600 transition" >
             Create Account
           </button>
         </form>

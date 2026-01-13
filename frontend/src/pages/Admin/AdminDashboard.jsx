@@ -1,12 +1,31 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { NavItem } from "../../components/admin/NavItems";
 import { StatCard } from "../../components/admin/StatCard";
 import { useNavigate } from "react-router-dom";
 
 
 export default function AdminDashboard() {
+  const [staffCount, setStaffCount] = useState(0)
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchStaff = async () => {
+      const token = localStorage.getItem("token")
+
+      const res = await fetch("http://localhost:3000/users/get/staffs/count", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      });
+
+      const data = await res.json();
+      setStaffCount(data.count)
+    };
+
+    fetchStaff();
+  }, [])
 
   return (
     <div className="flex h-screen w-full bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden">
@@ -66,7 +85,7 @@ export default function AdminDashboard() {
           {/* Stats */}
           <div className="grid md:grid-cols-3 gap-6">
             <StatCard title="Patient Intake" value="142" />
-            <StatCard title="Staff On Duty" value="45 / 60" />
+            <StatCard title="Total Staff" value={staffCount} />
             <StatCard title="Bed Occupancy" value="87%" />
           </div>
 
@@ -85,10 +104,10 @@ export default function AdminDashboard() {
               </thead>
               <tbody>
                 <tr className="border-t">
-                  <td className="px-6 py-3">Sarah Connor</td>
-                  <td className="px-6 py-3">Dr. Silberman</td>
-                  <td className="px-6 py-3">10:42 AM</td>
-                  <td className="px-6 py-3">Admitted</td>
+                  <td className="px-6 py-3"></td>
+                  <td className="px-6 py-3"></td>
+                  <td className="px-6 py-3"></td>
+                  <td className="px-6 py-3"></td>
                 </tr>
               </tbody>
             </table>

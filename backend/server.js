@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './dbConnect.js';
 import authroutes from './routes/authRoute.js';
+import userRoutes from './routes/staffRoutes.js'
 dotenv.config();
 const port = process.env.PORT
 
@@ -11,22 +12,14 @@ app.use(express.json())
 connectDB();
 
 import cors from 'cors'
-
-const allowedOrigins = ['http://localhost:5173', 'https://donor-management-system.vercel.app'];
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  },
+  origin: '*',
   credentials: true
 }))
 
 app.use('/auth', authroutes);
-
+app.use('/users/get', userRoutes)
+app.use('/users/get', userRoutes)
 
 app.listen(port, () => {
   console.log('Server is Running on port ' + port)
