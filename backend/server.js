@@ -20,7 +20,7 @@ import cors from 'cors'
 app.use(cors(
   {
     origin: 'https://donor-management-system.vercel.app',
-    credentials: true
+    // credentials: true
   }
 ))
 
