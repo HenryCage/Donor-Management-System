@@ -118,7 +118,7 @@ export default function PrescriptionDetails() {
                       max={item.quantity}
                       value={item.dispenseQty}
                       onChange={(e) =>
-                        handleQtyChange(i, Number(e.target.value))
+                        handleChange(i, Number(e.target.value))
                       }
                       className="w-20 text-center border rounded-lg px-2 py-1.5
                                 focus:outline-none focus:ring-2 focus:ring-emerald-500"
@@ -130,7 +130,6 @@ export default function PrescriptionDetails() {
           </table>
         </div>
 
-        {/* Action Bar */}
         <div className="flex justify-between items-center px-6 py-4 bg-gray-50 border-t">
           <button
             onClick={() => navigate(-1)}

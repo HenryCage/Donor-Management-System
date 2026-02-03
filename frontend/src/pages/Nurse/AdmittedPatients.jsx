@@ -42,7 +42,6 @@ export default function NurseAdmittedPatients() {
         <NurseSidebar />
 
         <main className="flex-1 p-6 md:p-10 overflow-y-auto">
-          {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -62,7 +61,6 @@ export default function NurseAdmittedPatients() {
             </button>
           </div>
 
-          {/* Status */}
           {loading && (
             <div className="bg-white border border-gray-200 rounded-xl p-6 text-gray-600 shadow-sm">
               Loading admitted patients...
@@ -75,7 +73,6 @@ export default function NurseAdmittedPatients() {
             </div>
           )}
 
-          {/* Table wrapper */}
           {!loading && !error && (
             <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
               <div className="px-6 py-4 border-b border-gray-200">

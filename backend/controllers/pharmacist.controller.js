@@ -52,11 +52,9 @@ export const dispensePrescription = async (req, res) => {
       return res.status(400).json({ message: "Prescription already processed" });
     }
 
-    // ✅ mark as dispensed (no stock logic)
     prescription.status = "dispensed";
     await prescription.save();
 
-    // ✅ optional: create audit record
     await DispenseRecord.create({
       prescription: prescription._id,
       pharmacist: req.user._id,

@@ -30,12 +30,10 @@ export default function Dashboard() {
 
       const [pendingRes, admittedRes] = await Promise.all([
         fetch("http://localhost:3000/visit/count?status=pending", {
-          headers: { Authorization: `Bearer ${token}` },
-          cache: "no-store",
+          headers: { Authorization: `Bearer ${token}` }
         }),
         fetch("http://localhost:3000/visit/count?status=admitted", {
-          headers: { Authorization: `Bearer ${token}` },
-          cache: "no-store",
+          headers: { Authorization: `Bearer ${token}` }
         }),
       ]);
 

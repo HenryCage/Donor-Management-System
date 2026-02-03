@@ -27,10 +27,8 @@ export default function AdminPatients() {
       setLoading(true);
       setError("");
 
-      // ✅ Use your endpoint style (adjust if yours differs)
       const res = await fetch("http://localhost:3000/patient/getpatients", {
-        headers: { Authorization: `Bearer ${token}` },
-        cache: "no-store",
+        headers: { Authorization: `Bearer ${token}` }
       });
 
       const data = await res.json().catch(() => null);
@@ -91,7 +89,6 @@ export default function AdminPatients() {
             </button>
           </div>
 
-          {/* Search card */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
             <label className="text-sm font-medium text-gray-700">Search</label>
             <input
@@ -103,7 +100,6 @@ export default function AdminPatients() {
             />
           </div>
 
-          {/* Loading/Error */}
           {loading && (
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-gray-600 shadow-sm">
               Loading patients...
@@ -116,7 +112,6 @@ export default function AdminPatients() {
             </div>
           )}
 
-          {/* Table card */}
           {!loading && !error && (
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto">
               <div className="px-6 py-4 border-b border-gray-200">

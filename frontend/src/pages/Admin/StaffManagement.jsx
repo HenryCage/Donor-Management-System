@@ -74,7 +74,6 @@ export default function StaffManagement() {
     const data = await res.json().catch(() => null);
     if (!res.ok) throw new Error(data?.message || "Failed to delete staff");
 
-    // ✅ update UI immediately
     setStaff((prev) => prev.filter((s) => s._id !== id));
   } catch (e) {
     alert(e.message);
@@ -87,7 +86,6 @@ export default function StaffManagement() {
       <div className="bg-gray-100 min-h-full">
         <div className="p-6 md:p-10 max-w-6xl mx-auto">
 
-          {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -106,7 +104,6 @@ export default function StaffManagement() {
             </button>
           </div>
 
-          {/* Search */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
             <label className="text-sm font-medium text-gray-700">
               Search staff
@@ -120,7 +117,6 @@ export default function StaffManagement() {
             />
           </div>
 
-          {/* Loading/Error */}
           {loading && (
             <div className="bg-white border border-gray-200 rounded-xl p-6 text-gray-600 shadow-sm">
               Loading staff...
@@ -133,7 +129,6 @@ export default function StaffManagement() {
             </div>
           )}
 
-          {/* Table */}
           {!loading && !error && (
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-x-auto">
               <div className="px-6 py-4 border-b border-gray-200">

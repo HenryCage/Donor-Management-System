@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export default function CountPatients() {
   const [count, setCount] = useState(0);
-  // const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export default function CountPatients() {
       } catch (error) {
         setError(error.message)
       } finally {
-        // setLoading(false)
+        
       }
     }
 

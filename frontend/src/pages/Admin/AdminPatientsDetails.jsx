@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AdminLayout from "../../components/admin/AdminLayout";
-// import AdminSidebar from "../../components/admin/Sidebar";
 
 const Section = ({ title, children }) => (
   <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
@@ -32,8 +31,7 @@ export default function AdminPatientDetails() {
       setError("");
 
       const res = await fetch(`http://localhost:3000/patient/getpatient/${id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-        cache: "no-store",
+        headers: { Authorization: `Bearer ${token}` }
       });
 
       const data = await res.json().catch(() => null);
@@ -55,8 +53,6 @@ export default function AdminPatientDetails() {
     <AdminLayout>
     <div className="min-h-screen bg-gray-100">
       <div className="flex">
-        {/* <AdminSidebar /> */}
-
         <main className="flex-1 p-6 md:p-10 max-w-6xl mx-auto">
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>

@@ -1,12 +1,8 @@
-import React from "react";
-
 export default function Footer() {
   return (
     <footer className="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-700">
       <div className="mx-auto max-w-6xl px-4 sm:px-10 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          
-          {/* Logo & Brand */}
           <div className="flex items-center gap-4 text-text-light dark:text-text-dark">
             <div className="size-6 text-primary">
               <svg
@@ -35,7 +31,6 @@ export default function Footer() {
             </h2>
           </div>
 
-          {/* Footer Links */}
           <div className="flex gap-6 text-sm text-gray-600 dark:text-gray-400">
             <a
               href="#"
@@ -51,7 +46,6 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Copyright */}
           <p className="text-sm text-gray-500">
             © 2025 VitaFlow. All rights reserved.
           </p>

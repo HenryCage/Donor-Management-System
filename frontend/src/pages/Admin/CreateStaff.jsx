@@ -75,7 +75,6 @@ export default function Signup() {
     <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
       <div className="w-full max-w-2xl">
         <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
-          {/* Header */}
           <div className="p-6 md:p-8 border-b border-slate-200 bg-gradient-to-r from-white to-slate-50">
             <h1 className="text-2xl md:text-3xl font-black text-slate-900">
               Create Staff Account
@@ -85,7 +84,6 @@ export default function Signup() {
             </p>
           </div>
 
-          {/* Body */}
           <div className="p-6 md:p-8">
             {error && (
               <div className="mb-5 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700">
@@ -94,7 +92,6 @@ export default function Signup() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Personal */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <h2 className="font-bold text-slate-900 mb-4">
                   Personal Information
@@ -173,7 +170,6 @@ export default function Signup() {
                 </div>
               </div>
 
-              {/* Work */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <h2 className="font-bold text-slate-900 mb-4">
                   Work Information
@@ -215,7 +211,6 @@ export default function Signup() {
                 </div>
               </div>
 
-              {/* Credentials */}
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <h2 className="font-bold text-slate-900 mb-4">
                   Login Credentials
@@ -269,7 +264,6 @@ export default function Signup() {
                 </div>
               </div>
 
-              {/* Buttons (UX unchanged) */}
               <div className="flex flex-col sm:flex-row gap-3 sm:justify-end">
                 <button
                   type="button"

@@ -1,8 +1,6 @@
 import image from '../../image/img.jpeg'
-import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
-  const navigate = useNavigate();
   return (
     <section>
       <div className="p-4 sm:p-6">
@@ -22,8 +20,6 @@ export default function HeroSection() {
               Manage patients, admissions, blood inventory, and hospital operations in one secure, real-time platform designed for efficiency and accuracy.
             </h2>
           </div>
-
-          
         </div>
       </div>
     </section>

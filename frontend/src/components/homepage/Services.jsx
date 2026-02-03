@@ -2,7 +2,6 @@
 export default function ServicesSection() {
   return (
     <section id="services" className="py-16 sm:py-24">
-      {/* Header */}
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
         <h2 className="text-primary text-base font-bold tracking-wide uppercase">
           Services Offered
@@ -17,9 +16,7 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      {/* Content */}
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto px-4 sm:px-10">
-        {/* Left Column (Boxes) */}
         <div className="flex flex-col gap-6">
           <div className="p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
             <h3 className="text-xl font-bold text-text-light dark:text-text-dark">
@@ -51,7 +48,6 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* Right Column (Image) */}
         <div className="sticky top-24">
           <img
             className="w-full h-auto rounded-xl object-cover aspect-[4/3]"

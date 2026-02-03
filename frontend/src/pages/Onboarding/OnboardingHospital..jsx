@@ -13,7 +13,7 @@ export default function HospitalOnboarding() {
 
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  const [hospitalId, setHospitalId] = useState(null); // ✅ store saved hospital _id
+  const [hospitalId, setHospitalId] = useState(null);
 
   const onChange = (e) => {
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
@@ -23,13 +23,11 @@ export default function HospitalOnboarding() {
     e.preventDefault();
     setError("");
 
-    // ✅ prevent re-saving if already saved
     if (hospitalId) return;
 
     try {
       setSaving(true);
 
-      // ✅ replace with YOUR exact endpoint
       const res = await fetch("http://localhost:3000/onboarding/hospital", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,12 +40,11 @@ export default function HospitalOnboarding() {
         throw new Error(data?.message || "Failed to save hospital");
       }
 
-      // ✅ support {hospital} or direct hospital response
       const id = data?.hospital?._id || data?._id;
 
       if (!id) throw new Error("Hospital saved but no ID returned from server");
 
-      setHospitalId(id); // ✅ now it's saved
+      setHospitalId(id);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -88,7 +85,7 @@ export default function HospitalOnboarding() {
               onChange={onChange}
               className="mt-1 w-full rounded-lg border px-3 py-2"
               required
-              disabled={!!hospitalId} // ✅ lock fields after saved (optional)
+              disabled={!!hospitalId} 
             />
           </div>
 
@@ -128,7 +125,6 @@ export default function HospitalOnboarding() {
           </div>
         </div>
 
-        {/* ✅ Buttons */}
         <div className="flex flex-col md:flex-row gap-3 pt-2">
           <button
             type="submit"

@@ -29,8 +29,7 @@ export default function NurseDashboard() {
       const res = await fetch(
         "http://localhost:3000/visit/count?status=admitted",
         {
-          headers: { Authorization: `Bearer ${token}` },
-          cache: "no-store",
+          headers: { Authorization: `Bearer ${token}` }
         }
       );
 

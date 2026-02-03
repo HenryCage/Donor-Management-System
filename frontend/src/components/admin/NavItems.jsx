@@ -1,6 +1,3 @@
-import React from "react";
-
-
 export function NavItem({ icon, label, active, onClick }) {
   return (
     <div

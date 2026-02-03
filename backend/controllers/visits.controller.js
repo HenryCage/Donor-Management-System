@@ -263,7 +263,7 @@ export const getAVisitHistory = async (req, res) => {
 
     const visit = await Visiting.findById(visitId)
       .populate("patient")
-      .populate("doctor"); // adjust field names to your schema
+      .populate("doctor");
 
     if (!visit) return res.status(404).json({ message: "Visit not found" });
 

@@ -93,8 +93,8 @@ export const updateStaff = async (req, res) => {
 
 export const deleteUserById = async (req, res) => {
   try {
-    const deleted = await User.findByIdAndDelete(req.params.id); // Delete user by ID
-    res.status(200).json(deleted); // Return deleted user
+    const deleted = await User.findByIdAndDelete(req.params.id);
+    res.status(200).json(deleted);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

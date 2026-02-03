@@ -66,7 +66,6 @@ export default function DispensedRecords() {
       </aside>
 
       <main className="ml-64 p-6 md:p-10">
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -85,7 +84,6 @@ export default function DispensedRecords() {
           </button>
         </div>
 
-        {/* Search Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5 md:p-6 mb-6">
           <label className="text-sm font-semibold text-gray-700">
             Search (patient name / ID / doctor)
@@ -125,7 +123,6 @@ export default function DispensedRecords() {
           </div>
         </div>
 
-        {/* States */}
         {loading && (
           <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 text-gray-600">
             Loading records...

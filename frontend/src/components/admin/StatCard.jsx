@@ -1,5 +1,3 @@
-import React from "react";
-
 export function StatCard({ title, value }) {
   return (
     <div className="bg-white dark:bg-[#1e293b] p-6 rounded-xl border">

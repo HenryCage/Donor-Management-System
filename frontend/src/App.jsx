@@ -38,6 +38,7 @@ export default function App () {
         <Route path="/signup" element={<Signup />} />
         <Route path="//onboarding/admin/:hospitalId" element={<AdminSignup />} />
         <Route path="/login" element={<Login />} />
+        
         <Route 
           path="/admin/dashboard" 
           element={<ProtectedRoute allowedRoles={["admin"]}>

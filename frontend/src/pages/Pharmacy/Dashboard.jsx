@@ -25,7 +25,6 @@ export default function PharmacyDashboard() {
       </aside>
 
       <main className="ml-64 p-6 md:p-10">
-        {/* Page header */}
         <div className="mb-8 flex items-start justify-between gap-4">
           <div>
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
@@ -37,7 +36,6 @@ export default function PharmacyDashboard() {
           </div>
         </div>
 
-        {/* Summary cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
           <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6">
             <p className="text-sm font-medium text-slate-600">
@@ -74,7 +72,6 @@ export default function PharmacyDashboard() {
           </div>
         </div>
 
-        {/* Pending prescriptions table */}
         <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
           <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
             <div>

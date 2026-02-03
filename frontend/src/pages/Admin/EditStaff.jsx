@@ -40,7 +40,7 @@ export default function EditStaff() {
       setForm({
         firstname: s.firstname || "",
         lastname: s.lastname || "",
-        dob: s.dob ? String(s.dob).slice(0, 10) : "", // yyyy-mm-dd
+        dob: s.dob ? String(s.dob).slice(0, 10) : "",
         gender: s.gender || "",
         department: s.department || "",
         phone: s.phone || "",
@@ -78,7 +78,6 @@ export default function EditStaff() {
       const data = await res.json().catch(() => null);
       if (!res.ok) throw new Error(data?.message || "Failed to update staff");
 
-      // back to list
       navigate("/admin/staffs");
     } catch (e) {
       setError(e.message);

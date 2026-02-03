@@ -76,8 +76,7 @@ export default function DoctorVisitPage() {
 
   const fetchVitals = async () => {
     const res = await fetch(`http://localhost:3000/vitals/${visitId}`, {
-      headers: { Authorization: `Bearer ${token}` },
-      cache: "no-store",
+      headers: { Authorization: `Bearer ${token}` }
     });
 
     let data = null;

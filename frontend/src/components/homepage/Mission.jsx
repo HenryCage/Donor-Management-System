@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function MissionSection() {
   return (
     <section id="mission" className="py-16 sm:py-24">

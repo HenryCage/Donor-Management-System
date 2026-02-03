@@ -6,7 +6,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-center w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
       <div className="flex items-center justify-between px-4 sm:px-10 py-3 w-full max-w-6xl">
-        {/* Logo + Brand */}
         <div className="flex items-center gap-4 text-text-light dark:text-text-dark">
           <div className="size-6 text-primary">
             <svg
@@ -33,7 +32,6 @@ export default function Navbar() {
           <h2 className="text-xl font-bold tracking-[-0.015em]">VitaFlow</h2>
         </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex flex-1 justify-end gap-8">
           <nav className="flex items-center gap-9">
             <a

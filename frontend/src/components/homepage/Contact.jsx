@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ContactSection() {
   return (
     <section
@@ -7,8 +5,6 @@ export default function ContactSection() {
       className="py-16 sm:py-24 bg-white dark:bg-background-dark rounded-xl px-6 sm:px-12 my-10 border border-gray-200 dark:border-gray-700"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-        
-        {/* Text Content */}
         <div className="flex flex-col">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">
             Schedule a Consultation
@@ -23,7 +19,6 @@ export default function ContactSection() {
 
         {/* Form */}
         <form className="flex flex-col gap-6">
-          {/* Name */}
           <div>
             <label
               htmlFor="name"
@@ -43,7 +38,6 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Facility */}
           <div>
             <label
               htmlFor="facility"
@@ -63,7 +57,6 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Email */}
           <div>
             <label
               htmlFor="email"
@@ -83,7 +76,6 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Message */}
           <div>
             <label
               htmlFor="message"
@@ -102,7 +94,6 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="flex items-center justify-center h-12 px-5 rounded-lg bg-primary text-white text-base font-bold tracking-[0.015em] hover:opacity-90 transition-opacity"

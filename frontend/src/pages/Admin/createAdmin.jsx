@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 export default function AdminSignup() {
   const navigate = useNavigate();
-  const { hospitalId } = useParams(); // ✅ get hospitalId from route
+  const { hospitalId } = useParams();
 
   const [form, setForm] = useState({
     firstname: "",
@@ -28,7 +28,7 @@ export default function AdminSignup() {
       const res = await fetch("http://localhost:3000/auth/admin/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, hospitalId }), // ✅ attach hospitalId
+        body: JSON.stringify({ ...form, hospitalId }), 
       });
 
       const data = await res.json().catch(() => null);

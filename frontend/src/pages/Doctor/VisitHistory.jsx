@@ -57,7 +57,6 @@ export default function VisitHistory() {
           </button>
         </div>
 
-        {/* Visit Summary */}
         <div className="bg-white rounded-lg shadow p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <p><span className="font-semibold">Visit Date:</span> {formatDate(visit.createdAt)}</p>
@@ -70,7 +69,6 @@ export default function VisitHistory() {
           </div>
         </div>
 
-        {/* Doctor Notes / Complaint / Diagnosis (whatever you store) */}
         <div className="bg-white rounded-lg shadow p-6 mb-6">
           <h3 className="text-lg font-semibold mb-3">Clinical Notes</h3>
 
@@ -81,7 +79,6 @@ export default function VisitHistory() {
           </div>
         </div>
 
-        {/* Prescription / Items (optional based on your DB) */}
         <div className="bg-white rounded-lg shadow p-6">
           <h3 className="text-lg font-semibold mb-3">Prescription / Items</h3>
 
